@@ -42,3 +42,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Real Notes
+
+If you are running the tests on a Mac, you may run into [Error: Error watching file for changes: EMFILE](https://github.com/facebook/jest/issues/3436). This seems to be resolvable using brew install watchman.
