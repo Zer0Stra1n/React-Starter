@@ -4,7 +4,49 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const authors = [
+    {
+        name: 'Mark Twain',
+        imageURL: 'images/authors/MarkTwain.jpg',
+        imageSource: 'Wikimedia Commons',
+        books: ['The Adventures of Huckleberry Finn', 'Eve\'s Diary', 'The Mysterious Stranger']
+    },
+    {
+        name: 'Stephen King',
+        imageURL: 'images/authors/StephenKing.png',
+        imageSource: 'Wikimedia Commons',
+        books: ['Pet Semetary', 'IT', 'The Outsider']
+    },
+    {
+        name: 'William Shakespeare',
+        imageURL: 'images/authors/WilliamShakespeare.jpg',
+        imageSource: 'Wikimedia Commons',
+        books: ['MacBeth', 'The Tempest', 'Hamlet']
+    },
+    {
+        name: 'H.P. Lovecraft',
+        imageURL: 'images/authors/HPLovecraft.jpg',
+        imageSource: 'Wikimedia Commons',
+        books: ['The Call of Cthulhu', 'The Shadow over Innsmouth', 'The Dunwich Horror']
+    },
+    {
+        name: 'Charles Dickens',
+        imageURL: 'images/authors/CharlesDickens.png',
+        imageSource: 'Wikimedia Commons',
+        books: ['The Old Curiosity Shop', 'Bleak House', 'The Battle of Life']
+    }
+];
+
+const state = {
+    turnData: {
+        author: authors[0],
+        books: authors[0].books
+    } 
+};
+
+// TODO: Build randomized selection of author and books
+
+ReactDOM.render(<App {...state} />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -1,14 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import Sample from './Sample/Sample'
+import Hero from './Hero/Hero';
+import Turn from './Turn/Turn';
+import Continue from './Continue/Continue';
+import Footer from './Footer/Footer';
 import './App.scss';
 
-const App: React.FC = () => {
+const App = ({turnData}) => {
   return (
-    <>
-      <div>Author Quiz</div>
-      <Sample />
-    </>
+    <div className="container-fluid">
+      <Hero />
+      <Turn {...turnData}/>
+      <Continue />
+      <Footer />
+    </div>
   );
 }
 
