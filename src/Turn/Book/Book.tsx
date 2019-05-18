@@ -1,7 +1,7 @@
 import React from 'react';
 import './Book.scss';
 
-const Book: React.FC<{title: string, onClick: any}> = ({title, onClick}) => {
+const Book: React.FC<{title: string, onClick: Function}> = ({title, onClick}) => {
 
 
     return (

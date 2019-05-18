@@ -2,7 +2,7 @@ import React from 'react';
 import './Turn.scss';
 import Book from './Book/Book';
 
-const Turn:React.FC<{author: any, books: string[], highlight: string, onAnswerSelected: any}> = ({author, books, highlight, onAnswerSelected}) => {
+const Turn:React.FC<{author: any, books: string[], highlight: string, onAnswerSelected: Function}> = ({author, books, highlight, onAnswerSelected}) => {
     
 const highlightColor = (onClick) => {
     const mapping = {

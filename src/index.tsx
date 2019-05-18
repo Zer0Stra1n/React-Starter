@@ -3,42 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Authors from './Author-Data';
 import { shuffle, sample } from 'underscore';
 
-const authors = [
-    {
-        name: 'Mark Twain',
-        imageURL: 'images/authors/MarkTwain.jpg',
-        imageSource: 'Wikimedia Commons',
-        books: ['The Adventures of Huckleberry Finn', 'Eve\'s Diary', 'The Mysterious Stranger']
-    },
-    {
-        name: 'Stephen King',
-        imageURL: 'images/authors/StephenKing.png',
-        imageSource: 'Wikimedia Commons',
-        books: ['Pet Semetary', 'IT', 'The Outsider']
-    },
-    {
-        name: 'William Shakespeare',
-        imageURL: 'images/authors/WilliamShakespeare.jpg',
-        imageSource: 'Wikimedia Commons',
-        books: ['MacBeth', 'The Tempest', 'Hamlet']
-    },
-    {
-        name: 'H.P. Lovecraft',
-        imageURL: 'images/authors/HPLovecraft.jpg',
-        imageSource: 'Wikimedia Commons',
-        books: ['The Call of Cthulhu', 'The Shadow over Innsmouth', 'The Dunwich Horror']
-    },
-    {
-        name: 'Charles Dickens',
-        imageURL: 'images/authors/CharlesDickens.png',
-        imageSource: 'Wikimedia Commons',
-        books: ['The Old Curiosity Shop', 'Bleak House', 'The Battle of Life']
-    }
-];
-
-const getTurnData  = (authors) => {
+const getTurnData  = (authors: any) => {
     // generate a list of all possible books
     const allBooks = authors.reduce((acc, val) => {
         // accomplished by concating all sub arrays into an empty array
@@ -59,7 +27,7 @@ const getTurnData  = (authors) => {
 }
 
 const state = {
-    turnData: getTurnData(authors),
+    turnData: getTurnData(Authors),
     highlight: '' 
 };
 
