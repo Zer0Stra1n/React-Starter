@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { shuffle, sample } from 'underscore';
 
 const authors = [
     {
@@ -37,11 +38,28 @@ const authors = [
     }
 ];
 
+const getTurnData  = (authors) => {
+    // generate a list of all possible books
+    const allBooks = authors.reduce((acc, val) => {
+        // accomplished by concating all sub arrays into an empty array
+        return acc.concat(val.books);
+    }, []);
+
+    // shuffles the books and take the first four
+    const books = shuffle(allBooks).slice(0, 4);
+    // pick one at random
+    const answer = sample(books);
+    
+    // return the 4 books and used the random one to find its author
+    return {
+        books: books,
+        author: authors.find( author => author.books.includes(answer))
+    }
+
+}
+
 const state = {
-    turnData: {
-        author: authors[0],
-        books: authors[0].books
-    } 
+    turnData: getTurnData(authors)
 };
 
 // TODO: Build randomized selection of author and books
