@@ -59,13 +59,21 @@ const getTurnData  = (authors) => {
 }
 
 const state = {
-    turnData: getTurnData(authors)
+    turnData: getTurnData(authors),
+    highlight: '' 
 };
 
-// TODO: Build randomized selection of author and books
+const validateAuthor = (answer: string) => {
+    const isCorrect = state.turnData.author.books.includes(answer);
+    state.highlight =  isCorrect;
+    render();
+}
 
-ReactDOM.render(<App {...state} />, document.getElementById('root'));
+const render = () => {
+    ReactDOM.render(<App {...state} onAnswerSelected={validateAuthor}/>, document.getElementById('root'));
+}
 
+render();
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA

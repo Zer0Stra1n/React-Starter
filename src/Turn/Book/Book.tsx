@@ -1,9 +1,11 @@
 import React from 'react';
 import './Book.scss';
 
-const Book: React.FC<{title: string}> = ({title}) => {
+const Book: React.FC<{title: string, onClick: any}> = ({title, onClick}) => {
+
+
     return (
-        <div className="answer">
+        <div className="answer" onClick={() => onClick(title)}>
             <h4>{title}</h4>
         </div>
     )

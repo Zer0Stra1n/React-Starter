@@ -5,11 +5,11 @@ import Continue from './Continue/Continue';
 import Footer from './Footer/Footer';
 import './App.scss';
 
-const App = ({turnData}) => {
+const App = ({turnData, highlight, onAnswerSelected}) => {
   return (
     <div className="container-fluid">
       <Hero />
-      <Turn {...turnData}/>
+      <Turn {...turnData} highlight={highlight} onAnswerSelected={onAnswerSelected}/>
       <Continue />
       <Footer />
     </div>
