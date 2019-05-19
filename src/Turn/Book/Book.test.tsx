@@ -13,11 +13,11 @@ describe('Book Component', () => {
            expect(wrapper.find('h4').text()).toEqual('Test');
         });
         it('fires a click function onClick', () => {
-            const spy = spyOn(console,'log');
-            const wrapper = shallow(<Book title={'Test'} onClick={console.log}/>);
+            const testFn = jest.fn();
+            const wrapper = shallow(<Book title={'Test'} onClick={testFn}/>);
             wrapper.find('.answer').simulate('click');
-            expect(spy).toHaveBeenCalledTimes(1);
-            expect(spy).toBeCalledWith('Test');
+            expect(testFn).toHaveBeenCalledTimes(1);
+            expect(testFn).toBeCalledWith('Test');
         });
     });
 });
